@@ -6,5 +6,8 @@ using python 3.8.12
 refresh the "db"
 ```
 instaloader --login=kodyyyang --fast-update pandemicpregnancyguide
+
+cd ppg/src
+instaloader --filename-pattern={date_utc}_{shortcode} --login=kodyyyang --fast-update pandemicpregnancyguide
 python3.8 parse.py
 ```
