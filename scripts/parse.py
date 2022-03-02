@@ -18,7 +18,7 @@ def parse_file_name(fname):
   date, *ftype = fname.split('.')
   if len(ftype) != 1 or len(date) < 30:
     # ignore .json.xz files and non-
-    return None, None, None
+    return None, None, None, None
   
   number = 0
   shortcode = date[20:31]
@@ -28,14 +28,14 @@ def parse_file_name(fname):
       number = int(date[32:])
     except Exception as e:
       print(f"{fname} threw error: {e}")
-      return None, None, None
-    date = date[:19]
+      return None, None, None, None
+  date = date[:19]
 
   try:
     date = datetime.strptime(date, "%Y-%m-%d_%H-%M-%S")
   except Exception as e:
     print(f"{fname} threw error: {e}")
-    return None, None, None
+    return None, None, None, None
   return date, shortcode, ftype[0], number
 
 if __name__ == '__main__':
@@ -70,7 +70,7 @@ if __name__ == '__main__':
           caption = f.read()
           post["caption"] = caption
           post["tags"] = ', '.join(list({t.strip("#") for t in caption.split() if t.startswith('#')}))
-          post["shortcode"] = p[3]
+          post["shortcode"] = value[3]
       elif value[2] == 'jpg':
         post["pictures"].append((value[0], value[1]))
     post["pictures"].sort()
