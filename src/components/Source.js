@@ -12,6 +12,11 @@ const SourceImg = styled.img`
   height: 20vw;
   width: 20vw;
   object-fit: cover;
+
+  @media (max-width: 768px) {
+    height: 90vw;
+    width: 90vw;
+  }
 `;
 
 const ImgLink = styled.a``;

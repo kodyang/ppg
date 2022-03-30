@@ -10,19 +10,30 @@ const PageWrapper = styled.div`
   flex-direction: column;
   align-items: stretch;
   padding: 6vw 18vw 0;
+
+  @media (max-width: 768px) {
+    align-items: center;
+    padding: 9vw 16px 16px;
+  }
 `;
 
 const Header = styled.div`
   align-self: center;
-  font-size: 34px;
-  font-weight: bold;
+  font-size: 32px;
+  font-weight: 600;
   margin-bottom: 2vw;
 `;
 
 const Subheader = styled.div`
   align-self: center;
-  size: 18px;
+  font-size: 18px;
   margin-bottom: 1vw;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 6vw;
+  }
 `;
 
 const StyledLabel = styled.label`
@@ -81,7 +92,13 @@ const StyledInput = styled.input`
 const ResultsHeader = styled.div`
   font-size: 18px;
   margin-top: 2vw;
-  // font-weight: bold;
+
+  @media (max-width: 768px) {
+    align-self: stretch;
+    text-align: left;
+    margin-top: 16px;
+    display: none;
+  }
 `;
 
 const ResultsRows = styled.div`
@@ -90,6 +107,15 @@ const ResultsRows = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 2vw;
+
+  @media (max-width: 768px) {
+    margin-top: 24px;
+    flex-direction: column;
+  }
+`;
+
+const NoResults = styled.div`
+  size: 24px;
 `;
 
 const idx = lunr(function() {
@@ -134,12 +160,6 @@ const Sources = () => {
     }
   }, [searchString]);
 
-  // useEffect(() => {
-  //   // 
-  //   console.log(posts);
-  //   setSearchResults(posts);
-  // }, );
-
   return (
     <PageWrapper>
       <Header>Catalogue Search</Header>
@@ -151,12 +171,12 @@ const Sources = () => {
       </StyledLabel>
       <ResultsHeader>{resultsHeader}</ResultsHeader>
       <ResultsRows>
-        {searchResults.map((element, ind) => {
+        {searchResults.length ? searchResults.map((element, ind) => {
             return (
               <Source data={element} key={ind} />
               // <div key="ind">{JSON.stringify(element)}</div>
             )
-          })}
+          }) : (<NoResults>No Results Found</NoResults>)}
       </ResultsRows>
     </PageWrapper>
   );
