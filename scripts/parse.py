@@ -5,7 +5,7 @@ from datetime import datetime
 import json
 
 # POSTS_RELATIVE_PATH = '../pandemicpregnancyguide'
-POSTS_RELATIVE_PATH = '../src/pandemicpregnancyguide'
+POSTS_RELATIVE_PATH = '../public/pandemicpregnancyguide'
 
 def parse_file_name(fname):
   '''
