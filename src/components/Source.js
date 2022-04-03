@@ -24,10 +24,10 @@ const ImgLink = styled.a``;
 
 const Source = (props) => {
   const {
-    date,
+    // date,
     pictures,
-    caption,
-    tags,
+    // caption,
+    // tags,
     shortcode
   } = props.data;
   const blobClient = props.containerClient.getBlobClient(pictures[0]);
