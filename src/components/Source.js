@@ -30,11 +30,12 @@ const Source = (props) => {
     tags,
     shortcode
   } = props.data;
+  const blobClient = props.containerClient.getBlobClient(pictures[0]);
 
   return (
     <OuterWrapper>
       <ImgLink href={`https://www.instagram.com/p/${shortcode}`} target="_blank">
-        <SourceImg src={`/pandemicpregnancyguide/${pictures[0]}`} />
+        <SourceImg src={blobClient.url} />
       </ImgLink>
     </OuterWrapper>
   )

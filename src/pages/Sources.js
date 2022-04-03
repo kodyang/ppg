@@ -3,6 +3,8 @@ import Source from '../components/Source';
 import posts from '../posts.json';
 import * as lunr from 'lunr';
 
+import { BlobServiceClient } from '@azure/storage-blob';
+
 import styled from 'styled-components';
 
 const PageWrapper = styled.div`
@@ -129,7 +131,13 @@ const idx = lunr(function() {
 
 const DEFAULT_RESULTS_HEADER = "Recent Posts:";
 
+const blobSasUrl = "https://ppgimagestore.blob.core.windows.net/?sv=2020-08-04&ss=bfqt&srt=sco&sp=rwdlacupitfx&se=2023-04-03T08:54:07Z&st=2022-04-03T00:54:07Z&spr=https&sig=p2s9mkbKrW1aCbRFs89Ty71C36iX33zNa90LwDro2EQ%3D";
+const containerName = "ppgimages";
+
 const Sources = () => {
+  const blobServiceClient = new BlobServiceClient(blobSasUrl);
+  const containerClient = blobServiceClient.getContainerClient(containerName);
+  
   const isInitialMount = useRef(true);
   const [searchString, setSearchString] = useState("");
   const [searchResults, setSearchResults] = useState(posts.slice(-9).reverse());
@@ -173,8 +181,7 @@ const Sources = () => {
       <ResultsRows>
         {searchResults.length ? searchResults.map((element, ind) => {
             return (
-              <Source data={element} key={ind} />
-              // <div key="ind">{JSON.stringify(element)}</div>
+              <Source data={element} key={ind} containerClient={containerClient} />
             )
           }) : (<NoResults>No Results Found</NoResults>)}
       </ResultsRows>
