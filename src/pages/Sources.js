@@ -131,7 +131,7 @@ const idx = lunr(function() {
 
 const DEFAULT_RESULTS_HEADER = "Recent Posts:";
 
-const blobSasUrl = "https://ppgimagestore.blob.core.windows.net/?sv=2020-08-04&ss=bfqt&srt=sco&sp=rwdlacupitfx&se=2023-04-03T08:54:07Z&st=2022-04-03T00:54:07Z&spr=https&sig=p2s9mkbKrW1aCbRFs89Ty71C36iX33zNa90LwDro2EQ%3D";
+const blobSasUrl = "https://ppgimagestore.blob.core.windows.net/?sv=2020-08-04&ss=bfqt&srt=sco&sp=rtf&se=2023-04-04T08:06:38Z&st=2022-04-04T00:06:38Z&spr=https&sig=HdPeBj%2Fj%2BoPiMQhoATeXWT5Fmna5Oou6tdyjvihwv5s%3D";
 const containerName = "ppgimages";
 
 const Sources = () => {
