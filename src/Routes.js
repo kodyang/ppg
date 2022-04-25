@@ -4,7 +4,7 @@ import { Router, Link } from "@reach/router";
 import About from './pages/About';
 import Sources from './pages/Sources';
 import Team from './pages/Team';
-import Media from './pages/Media';
+// import Media from './pages/Media';
 import Contact from './pages/Contact';
 import Hamburger from './components/Hamburger';
 
