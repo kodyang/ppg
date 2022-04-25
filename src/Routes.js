@@ -3,6 +3,10 @@ import { Router, Link } from "@reach/router";
 
 import About from './pages/About';
 import Sources from './pages/Sources';
+import Team from './pages/Team';
+import Media from './pages/Media';
+import Contact from './pages/Contact';
+import Hamburger from './components/Hamburger';
 
 import styled from 'styled-components';
 import logo from './assets/ppg-profile.jpg';
@@ -48,6 +52,10 @@ const RightNavWrapper = styled.div`
   align-items: center;
   flex-direction: row-reverse;
   font-size: 18px;
+
+  @media (max-width: 768px) {
+    flex: 0 1 auto;
+  }
 `;
 
 const LinksWrapper = styled.div`
@@ -57,7 +65,7 @@ const LinksWrapper = styled.div`
   justify-content: flex-start;
 
   @media (max-width: 768px) {
-    align-items: center;    
+    display: none;
   }
 `;
 
@@ -80,24 +88,31 @@ function Routes() {
   return (
     <React.Fragment>
       <Header>
+        <Hamburger />
         <LeftNavWrapper>
           <LinksWrapper>
             <LinkWrapper><StyledLink to='/about'>About</StyledLink></LinkWrapper>
-            <LinkWrapper><StyledLink to='/sources'>Catalogue Search</StyledLink></LinkWrapper>
+            <LinkWrapper><StyledLink to='/team'>Team</StyledLink></LinkWrapper>
+            <LinkWrapper><StyledLink to='/sources'>Search</StyledLink></LinkWrapper>
+            {/* <LinkWrapper><StyledLink to='/media'>Media</StyledLink></LinkWrapper> */}
+            <LinkWrapper><StyledLink to='/contact'>Contact</StyledLink></LinkWrapper>
           </LinksWrapper>
           <LogoWrapper>
             <Logo src={logo} alt="Logo" />
           </LogoWrapper>
         </LeftNavWrapper>
         <RightNavWrapper>
-        <InstaLink href="https://www.instagram.com/pandemicpregnancyguide/?hl=en" target="_blank">
-          <SiInstagram />
-        </InstaLink>
+          <InstaLink href="https://www.instagram.com/pandemicpregnancyguide/?hl=en" target="_blank">
+            <SiInstagram />
+          </InstaLink>
         </RightNavWrapper>
       </Header>
       <Router>
-        <About path="/about" />
-        <Sources path="/sources" default />
+        <About path="/about" default />
+        <Team path="/team" />
+        <Sources path="/sources" />
+        {/* <Media path='/media' /> */}
+        <Contact path='/contact' />
       </Router>
     </React.Fragment>
   );
