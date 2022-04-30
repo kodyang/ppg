@@ -89,6 +89,12 @@ const StyledLink = styled(Link)`
   font-size: 17px;
 `;
 
+const StyledExternalLink = styled.a`
+  color: black;
+  font-size: 17px;
+  text-decoration: none;
+`;
+
 const InstaLink = styled.a`
   color: black;
   text-decoration: none;
@@ -123,7 +129,7 @@ function Routes() {
             <LinkWrapper><StyledLink to='/about'>About</StyledLink></LinkWrapper>
             <LinkWrapper><StyledLink to='/team'>Team</StyledLink></LinkWrapper>
             <LinkWrapper><StyledLink to='/sources'>Search</StyledLink></LinkWrapper>
-            {/* <LinkWrapper><StyledLink to='/media'>Media</StyledLink></LinkWrapper> */}
+            <LinkWrapper><StyledExternalLink href="https://www.instagram.com/pandemicpregnancyguide/channel/" target="_blank">Videos</StyledExternalLink></LinkWrapper>
             <LinkWrapper><StyledLink to='/contact'>Contact</StyledLink></LinkWrapper>
           </LinksWrapper>
           <LogoWrapper>
