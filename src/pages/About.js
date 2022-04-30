@@ -17,6 +17,7 @@ const Header = styled.div`
   font-weight: 600;
   align-self: center;
   margin: 6vw 0 3vw;
+  text-align: center;
 
   @media (max-width: 768px) {
     margin: 9vw 0 6vw;

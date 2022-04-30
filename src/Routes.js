@@ -13,14 +13,20 @@ import logo from './assets/ppg-profile.jpg';
 import { SiInstagram } from "react-icons/si";
 
 const Header = styled.nav`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 1.1vw 3vw;
+  padding: 12px 64px;
   background-color: #FCF1F2;
 
   @media (max-width: 768px) {
-    padding: 2vw 4vw;
+    padding: 8px 16px;
   }
 `;
 
@@ -42,7 +48,7 @@ const Logo = styled.img`
   border-radius: 50%;
 
   @media (max-width: 768px) {
-    max-height: 15vw;    
+    max-height: 56px;    
   }
 `;
 
@@ -83,6 +89,13 @@ const InstaLink = styled.a`
   text-decoration: none;
 `;
 
+const MainPage = styled.div`
+  margin-top: 128px;
+  
+  @media (max-width: 768px) {
+    margin-top: 64px;
+  }
+`;
 
 function Routes() {
   return (
@@ -107,13 +120,16 @@ function Routes() {
           </InstaLink>
         </RightNavWrapper>
       </Header>
-      <Router>
-        <About path="/about" default />
-        <Team path="/team" />
-        <Sources path="/sources" />
-        {/* <Media path='/media' /> */}
-        <Contact path='/contact' />
-      </Router>
+      <MainPage>
+        <Router>
+          <About path="/about" default />
+          <Team path="/team" />
+          <Sources path="/sources" />
+          {/* <Media path='/media' /> */}
+          <Contact path='/contact' />
+        </Router>
+
+      </MainPage>
     </React.Fragment>
   );
 }

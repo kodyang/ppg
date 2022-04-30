@@ -44,8 +44,8 @@ const ContactForm = styled.form`
 const InputBlock = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   margin-bottom: 2vw;
+  align-self: stretch;
 
   @media (max-width: 768px) {
     align-items: stretch;
@@ -53,12 +53,12 @@ const InputBlock = styled.div`
 `;
 
 const SubmitButton = styled.button`
-  font: 1.25rem sans-serif;
+  font-size: 16px;
   border-radius: 0.25rem;
   cursor: pointer;
   padding: 0.75rem 1.25rem;
-
-  background-color: hsl(213, 73%, 50%);
+  border: none;
+  background-color: #324E63;
   color: white;
   margin-top: 2vw;
 `;
