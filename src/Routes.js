@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Router, Link } from "@reach/router";
-
-import About from './pages/About';
-import Sources from './pages/Sources';
-import Team from './pages/Team';
-// import Media from './pages/Media';
-import Contact from './pages/Contact';
-import Hamburger from './components/Hamburger';
 
 import styled from 'styled-components';
 import logo from './assets/ppg-profile.jpg';
 import { SiInstagram, SiTwitter } from "react-icons/si";
+
+import Hamburger from './components/Hamburger';
+const About = lazy(() => import('./pages/About'));
+const Sources = lazy(() => import('./pages/Sources'));
+const Team = lazy(() => import('./pages/Team'));
+const Contact = lazy(() => import('./pages/Contact'));
+
 
 const Header = styled.nav`
   position: fixed;
@@ -148,11 +148,12 @@ function Routes() {
       <MainPage>
         <Router primary={false}>
           <ScrollToTop path="/">
-            <About path="/about" default />
-            <Team path="/team" />
-            <Sources path="/sources" />
-            {/* <Media path='/media' /> */}
-            <Contact path='/contact' />
+            <Suspense path="/" fallback={<div></div>}>
+              <About path="/about" default />
+              <Team path="/team" />
+              <Sources path="/sources" />
+              <Contact path='/contact' />
+            </Suspense>
           </ScrollToTop>
         </Router>
 
