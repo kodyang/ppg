@@ -19,7 +19,7 @@ const PageWrapper = styled.div`
   }
 `;
 
-const Header = styled.div`
+const Header = styled.h1`
   align-self: center;
   text-align: center;
   font-size: 32px;

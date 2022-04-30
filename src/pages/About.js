@@ -12,7 +12,7 @@ const OuterWrapper = styled.div`
   }
 `;
 
-const Header = styled.div`
+const Header = styled.h1`
   font-size: 32px;
   font-weight: 600;
   align-self: center;
@@ -24,7 +24,7 @@ const Header = styled.div`
   }
 `;
 
-const MainText = styled.div`
+const MainText = styled.p`
   font-size: 17px;
   line-height: 1.5em;
 `;
