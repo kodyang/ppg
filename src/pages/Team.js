@@ -26,7 +26,8 @@ const Header = styled.div`
 const HeadshotsOuterWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-around;
   align-items: flex-start;
 
   @media (max-width: 768px) {
@@ -122,10 +123,6 @@ const students = [
     'src': 'Julia_Avolio.jpg'
   },
   {
-    'name': 'Kellie Kim',
-    'src': 'Kellie_Kim.jpg'
-  },
-  {
     'name': 'Megan Watson',
     'src': 'Megan_Watson.jpg'
   },
@@ -133,6 +130,26 @@ const students = [
     'name': 'Thalia Hua',
     'src': 'Thalia_Hua.jpg'
   },
+  {
+    'name': 'Kellie Kim',
+    'src': 'Kellie_Kim.jpg'
+  },
+  {
+    'name': 'Morgan Martin',
+    'src': 'Placeholder.jpg'
+  },
+  {
+    'name': 'Stephanie Dephoure',
+    'src': 'Stephanie_Dephoure.jpg'
+  },
+  {
+    'name': 'Hafsa Zia',
+    'src': 'Placeholder.jpg'
+  },
+  {
+    'name': 'Gemma Postill',
+    'src': 'Placeholder.jpg'
+  }
 ]
 
 const former = [
@@ -171,7 +188,7 @@ const Team = () => {
         </BioWrapper>
       </FounderHeadshotWrapper>
     </HeadshotsOuterWrapper>
-    <Header>Student Members</Header>
+    <Header>Team Members</Header>
     <HeadshotsOuterWrapper>
       {students.map((value, index) => (
         <StudentsHeadshotWrapper>

@@ -10,7 +10,7 @@ import Hamburger from './components/Hamburger';
 
 import styled from 'styled-components';
 import logo from './assets/ppg-profile.jpg';
-import { SiInstagram } from "react-icons/si";
+import { SiInstagram, SiTwitter } from "react-icons/si";
 
 const Header = styled.nav`
   position: fixed;
@@ -35,6 +35,10 @@ const LeftNavWrapper = styled.div`
   flex: 1 1 67%;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    padding-left: 26px;
+  }
 `;
 
 const LogoWrapper = styled.div`
@@ -82,11 +86,18 @@ const LinkWrapper = styled.div`
 const StyledLink = styled(Link)`
   color: black;
   text-decoration: none;
+  font-size: 17px;
 `;
 
 const InstaLink = styled.a`
   color: black;
   text-decoration: none;
+  margin-left: 1.5vw;
+  font-size: 22px;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 const MainPage = styled.div`
@@ -96,6 +107,11 @@ const MainPage = styled.div`
     margin-top: 64px;
   }
 `;
+
+const ScrollToTop = ({ children, location }) => {
+  React.useEffect(() => window.scrollTo(0, 0), [location.pathname])
+  return children
+}
 
 function Routes() {
   return (
@@ -115,18 +131,23 @@ function Routes() {
           </LogoWrapper>
         </LeftNavWrapper>
         <RightNavWrapper>
+          <InstaLink href="https://twitter.com/pandemicpreg?lang=en" target="_blank">
+            <SiTwitter />
+          </InstaLink>
           <InstaLink href="https://www.instagram.com/pandemicpregnancyguide/?hl=en" target="_blank">
             <SiInstagram />
           </InstaLink>
         </RightNavWrapper>
       </Header>
       <MainPage>
-        <Router>
-          <About path="/about" default />
-          <Team path="/team" />
-          <Sources path="/sources" />
-          {/* <Media path='/media' /> */}
-          <Contact path='/contact' />
+        <Router primary={false}>
+          <ScrollToTop path="/">
+            <About path="/about" default />
+            <Team path="/team" />
+            <Sources path="/sources" />
+            {/* <Media path='/media' /> */}
+            <Contact path='/contact' />
+          </ScrollToTop>
         </Router>
 
       </MainPage>

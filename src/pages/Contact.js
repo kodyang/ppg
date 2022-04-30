@@ -52,6 +52,10 @@ const InputBlock = styled.div`
   }
 `;
 
+const Input = styled.input`
+  font-size: 16px;
+`;
+
 const SubmitButton = styled.button`
   font-size: 16px;
   border-radius: 0.25rem;
@@ -85,11 +89,11 @@ const Contact = () => {
       <ContactForm ref={form} onSubmit={sendEmail}>
         <InputBlock>
           <Label>Name</Label>
-          <input type="text" name="user_name" />
+          <Input type="text" name="user_name" />
         </InputBlock>
         <InputBlock>
           <Label>Email</Label>
-          <input type="email" name="user_email" />
+          <Input type="email" name="user_email" />
         </InputBlock>
         <Label>Message</Label>
         <textarea rows="4" name="message" />
