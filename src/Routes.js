@@ -37,7 +37,7 @@ const LeftNavWrapper = styled.div`
   justify-content: space-between;
 
   @media (max-width: 768px) {
-    padding-left: 26px;
+    padding-left: 42px;
   }
 `;
 
@@ -103,6 +103,7 @@ const InstaLink = styled.a`
 
   @media (max-width: 768px) {
     font-size: 18px;
+    margin-left: 12px;
   }
 `;
 
