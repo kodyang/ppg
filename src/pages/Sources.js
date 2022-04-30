@@ -170,7 +170,7 @@ const Sources = () => {
 
   return (
     <PageWrapper>
-      <Header>Catalogue Search</Header>
+      <Header>Search Through Our Posts</Header>
       <Subheader>Search through our catalogue of social media posts for any specific topic or phrase</Subheader>
 
       <StyledLabel>

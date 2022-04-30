@@ -128,7 +128,7 @@ function Routes() {
           <LinksWrapper>
             <LinkWrapper><StyledLink to='/about'>About</StyledLink></LinkWrapper>
             <LinkWrapper><StyledLink to='/team'>Team</StyledLink></LinkWrapper>
-            <LinkWrapper><StyledLink to='/sources'>Search</StyledLink></LinkWrapper>
+            <LinkWrapper><StyledLink to='/sources'>Posts</StyledLink></LinkWrapper>
             <LinkWrapper><StyledExternalLink href="https://www.instagram.com/pandemicpregnancyguide/channel/" target="_blank">Videos</StyledExternalLink></LinkWrapper>
             <LinkWrapper><StyledLink to='/contact'>Contact</StyledLink></LinkWrapper>
           </LinksWrapper>
