@@ -49,6 +49,12 @@ const StyledLink = styled(Link)`
   font-size: 24px;
 `;
 
+const StyledExternalLink = styled.a`
+color: black;
+text-decoration: none;
+font-size: 24px;
+`;
+
 const Hamburger = () => {
 
   const [isOpen, setIsOpen] = useState(false);
@@ -60,7 +66,7 @@ const Hamburger = () => {
             <LinkWrapper onClick={() => setIsOpen(!isOpen)}><StyledLink to='/about'>About</StyledLink></LinkWrapper>
             <LinkWrapper onClick={() => setIsOpen(!isOpen)}><StyledLink to='/team'>Team</StyledLink></LinkWrapper>
             <LinkWrapper onClick={() => setIsOpen(!isOpen)}><StyledLink to='/sources'>Search</StyledLink></LinkWrapper>
-            {/* <LinkWrapper><StyledLink to='/media'>Media</StyledLink></LinkWrapper> */}
+            <LinkWrapper onClick={() => setIsOpen(!isOpen)}><StyledExternalLink href="https://www.instagram.com/pandemicpregnancyguide/channel/" target="_blank">Media</StyledExternalLink></LinkWrapper>
             <LinkWrapper onClick={() => setIsOpen(!isOpen)}><StyledLink to='/contact'>Contact</StyledLink></LinkWrapper>
           </LinksWrapper>
         </MenuBackground>}

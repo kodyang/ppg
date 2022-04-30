@@ -21,6 +21,7 @@ const PageWrapper = styled.div`
 
 const Header = styled.div`
   align-self: center;
+  text-align: center;
   font-size: 32px;
   font-weight: 600;
   margin-bottom: 2vw;
@@ -42,6 +43,10 @@ const StyledLabel = styled.label`
   font-size: 14px;
   position: relative;
   border-top: 20px solid transparent;
+
+  @media (max-width: 768px) {
+    align-self: stretch;
+  }
 `;
 
 const LabelText = styled.span`
