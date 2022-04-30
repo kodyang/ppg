@@ -191,7 +191,7 @@ const Team = () => {
     <Header>Team Members</Header>
     <HeadshotsOuterWrapper>
       {students.map((value, index) => (
-        <StudentsHeadshotWrapper>
+        <StudentsHeadshotWrapper key={index}>
           <StudentHeadshot src={`current-team/${value.src}`} />
           <BioWrapper>
             <Name>{value.name}</Name>
