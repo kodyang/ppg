@@ -66,7 +66,7 @@ const Hamburger = () => {
             <LinkWrapper onClick={() => setIsOpen(!isOpen)}><StyledLink to='/about'>About</StyledLink></LinkWrapper>
             <LinkWrapper onClick={() => setIsOpen(!isOpen)}><StyledLink to='/team'>Team</StyledLink></LinkWrapper>
             <LinkWrapper onClick={() => setIsOpen(!isOpen)}><StyledLink to='/sources'>Search</StyledLink></LinkWrapper>
-            <LinkWrapper onClick={() => setIsOpen(!isOpen)}><StyledExternalLink href="https://www.instagram.com/pandemicpregnancyguide/channel/" target="_blank">Media</StyledExternalLink></LinkWrapper>
+            <LinkWrapper onClick={() => setIsOpen(!isOpen)}><StyledExternalLink href="https://www.instagram.com/pandemicpregnancyguide/channel/" target="_blank">Videos</StyledExternalLink></LinkWrapper>
             <LinkWrapper onClick={() => setIsOpen(!isOpen)}><StyledLink to='/contact'>Contact</StyledLink></LinkWrapper>
           </LinksWrapper>
         </MenuBackground>}

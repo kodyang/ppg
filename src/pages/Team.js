@@ -155,10 +155,11 @@ const students = [
 const former = [
   "Sarah Freeman",
   "Sepand Alavifard",
-  "Xin Xa",
+  "Xin Xu",
   "Isabella Fan",
   "Laura Diamond",
   "Alex Spivak",
+  "Cheyanne Reed",
 ];
 
 const Team = () => {
