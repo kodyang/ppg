@@ -149,6 +149,10 @@ const students = [
   {
     'name': 'Gemma Postill',
     'src': 'Gemma_Postill.jpg'
+  },
+  {
+    'name': 'Laura Diamond',
+    'src': 'Laura_Diamond.jpg'
   }
 ]
 
@@ -157,7 +161,6 @@ const former = [
   "Sepand Alavifard",
   "Xin Xu",
   "Isabella Fan",
-  "Laura Diamond",
   "Alex Spivak",
   "Cheyanne Reed",
 ];
