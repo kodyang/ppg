@@ -148,7 +148,7 @@ const students = [
   },
   {
     'name': 'Gemma Postill',
-    'src': 'Placeholder.jpg'
+    'src': 'Gemma_Postill.jpg'
   }
 ]
 
