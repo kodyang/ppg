@@ -8,7 +8,7 @@ import json
 from azure.storage.blob import BlobServiceClient, BlobClient, ContainerClient, __version__
 
 # POSTS_RELATIVE_PATH = '../pandemicpregnancyguide'
-POSTS_RELATIVE_PATH = '../public/pandemicpregnancyguide'
+POSTS_RELATIVE_PATH = '../pandemicpregnancyguide'
 
 connect_str = os.getenv('AZURE_STORAGE_CONNECTION_STRING')
 blob_service_client = BlobServiceClient.from_connection_string(connect_str)
